@@ -1,8 +1,50 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paul Drake's Website</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <a class="col-3" href="files/Resume 2020.pdf">Resume</a>
+            <h1 class="col-3">Paul Drake's Website</h1>
+            <div class="dropdown col-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies">Movie Streaming App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec nisi efficitur urna aliquam elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis porta purus. Phasellus vitae luctus diam. Pellentesque ultrices augue nisi, sit amet feugiat velit facilisis id. Fusce rhoncus felis nulla. Etiam ornare metus non felis aliquam sagittis. Vestibulum eget porta magna. Donec vel accumsan quam. Proin scelerisque ligula nec malesuada imperdiet. Nulla fringilla placerat mauris, nec lobortis tellus lacinia a. Fusce sed turpis dolor. Nulla euismod efficitur porta. Cras metus metus, scelerisque et massa at, mollis pretium nisl.</p>
+            </div>
+            <div class="col-6">
+                <img src="files/_DSC0630-Costco3.jpg" alt="My_Picture">
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+</footer>
+</body>
+</html>

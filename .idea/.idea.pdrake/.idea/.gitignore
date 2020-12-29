@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.pdrake.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\Paul\source\repos\Personal Website\pdrake\.idea\.idea.pdrake\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

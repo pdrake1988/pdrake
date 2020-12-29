@@ -17,15 +17,15 @@ namespace pdrake.Controllers
             {
                 var apiResponse = await httpClient.GetStreamAsync(
                     "https://api.themoviedb.org/3/discover/movie?api_key=e2e4f004450c3b2d09d61c0fb5120d06&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=" + page);
-                ViewData["movies"] = await JsonSerializer.DeserializeAsync<IEnumerable<MovieResults>>(apiResponse);
-                IEnumerable<MovieResults> movieResults = ViewData["movies"] as IEnumerable<MovieResults>;
+                IEnumerable<MovieResults> movieResults = await JsonSerializer.DeserializeAsync<IEnumerable<MovieResults>>(apiResponse);
+                ViewData["movies"] = movieResults;
             }
             else
             {
                 var apiResponse = await httpClient.GetStreamAsync(
-                    "https://api.themoviedb.org/3/discover/movie?api_key=e2e4f004450c3b2d09d61c0fb5120d06&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&" + "with_genre=" + genreId + "&page=" + page);
-                ViewData["movies"] = await JsonSerializer.DeserializeAsync<IEnumerable<MovieResults>>(apiResponse);
-                IEnumerable<MovieResults> movieResults = ViewData["movies"] as IEnumerable<MovieResults>;
+                    "https://api.themoviedb.org/3/discover/movie?api_key=e2e4f004450c3b2d09d61c0fb5120d06&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&with_genre=" + genreId + "&page=" + page);
+                IEnumerable<MovieResults> movieResults = await JsonSerializer.DeserializeAsync<IEnumerable<MovieResults>>(apiResponse);
+                ViewData["movies"] = movieResults;
             }
 
             return View();

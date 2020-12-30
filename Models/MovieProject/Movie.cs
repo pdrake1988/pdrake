@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace pdrake.Models.MovieProject
 {
     [Produces("application/json")]
-    public abstract class Movie
+    public class Movie
     {
         [JsonPropertyName("adult")]
         public bool Adult { get; set; } 

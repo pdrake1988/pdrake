@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace pdrake.Models.MovieProject
 {
     [Produces("application/json")]
-    public class MovieResults : Movie
+    public class MovieResults 
     {
         [JsonPropertyName("page")]
         public int Page { get; set; } 

@@ -3,24 +3,24 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Paul Drake's Website</title>
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
 <header>
     <div class="container">
         <div class="row">
-            <a class="col-4" href="files/Resume 2020.pdf">Resume</a>
-            <h1 class="col-4">Paul Drake's Website</h1>
-            <div class="dropdown">
+            <a class="col-1 btn btn-primary" role="button" href="files/Resume 2020.pdf">Resume</a>
+            <h1 class="col-7 text-center">Paul Drake's Website</h1>
+            <div class="dropdown col-4">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies">Movie Streaming Availability App</a>
@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec nisi efficitur urna aliquam elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis porta purus. Phasellus vitae luctus diam. Pellentesque ultrices augue nisi, sit amet feugiat velit facilisis id. Fusce rhoncus felis nulla. Etiam ornare metus non felis aliquam sagittis. Vestibulum eget porta magna. Donec vel accumsan quam. Proin scelerisque ligula nec malesuada imperdiet. Nulla fringilla placerat mauris, nec lobortis tellus lacinia a. Fusce sed turpis dolor. Nulla euismod efficitur porta. Cras metus metus, scelerisque et massa at, mollis pretium nisl.</p>
+                <p>I was born and raised in South Florida. I attended Broward College to pursue my passion for science and public service. Broward College has a three year Paramedic program and I graduated in 2012. Studied for the state Paramedic License and recieved my license in 2013. I moved to West Texas with my family in 2013 to be closer to my aging grandparents. In 2015, I started classes at South Plains College and started taking English, Math, and Programing classes. Very quickly I got hooked on programing and coding. I was recruited into the coding program at South Plains College in the Fall of 2019. This programing was an eleven month intensive coding bootcamp. In the ten months, I learned C#, HTML, CSS, MySQL, and Angular.</p>
             </div>
             <div class="col-6">
                 <img src="files/_DSC0630-Costco3.jpg" alt="My_Picture">
@@ -42,8 +42,9 @@
     </div>
 </main>
 <footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
 </footer>
 </body>
 </html>

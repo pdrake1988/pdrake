@@ -29,5 +29,17 @@ namespace pdrake.Controllers
 
             return View();
         }
+
+        public async Task<ActionResult> MoviePage(int movieId)
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var apiResponse = await httpClient.GetStreamAsync("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=e2e4f004450c3b2d09d61c0fb5120d06&language=en-US");
+                var movieProviders = await httpClient.GetStreamAsync("https://api.themoviedb.org/3/movie/" + movieId + "/watch/providers?api_key=e2e4f004450c3b2d09d61c0fb5120d06");
+                ViewData["movieProviders"] = await JsonSerializer.DeserializeAsync<Root>(movieProviders);
+                ViewData["movieResults"] = await JsonSerializer.DeserializeAsync<Root>(apiResponse);
+                return View();
+            }
+        }
     }
 }

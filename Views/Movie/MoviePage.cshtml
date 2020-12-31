@@ -1,18 +1,106 @@
-﻿@model TModel
-
+﻿@using pdrake.Models.MovieProject
 @{
     Layout = null;
+    Root movieResult = ViewData["movieResults"] as Root;
+    Root movieProviders = ViewData["movieProviders"] as Root;
 }
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-    <title>title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@movieResult.Title</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
-<div>
-      
+<body  style="background-image: url('https://image.tmdb.org/t/p/original/@movieResult.BackdropPath')">
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <label class="text-center">Release Date</label>
+                <H3 class="text-center">@movieResult.</h3>
+            </div>
+            <div class="col-4">
+                <label class="text-center">Movie Title</label>
+                <h1 class="text-center">@movieResult.Title</h1>
+                <label class="text-center">Movie Length</label>
+                <h1 class="text-center">@movieResult.Runtime.ToString("N")</h1>
+                <label class="text-center">Tagline</label>
+                <h3 class="text-center">@movieResult.Tagline</h3>
+                <label class="text-center">Film Status</label>
+                <h3 class="text-center">@movieResult.Status</h3>
+            </div>
+            <div class="col-3">
+                <label class="text-center">Adult Content</label>
+                <h3 class="text-center">@movieResult.Adult.ToString()</h3>
+                <label class="text-center">Movie Genres</label>
+                @foreach (var genre in movieResult.Genres)
+                {
+                    <h3 class="text-center">@genre.Name</h3>
+                }
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+<div class="container">
+    <div class="row">
+        <div class="col-6"j>
+            <label class="text-center">Overview</label>
+            <p>@movieResult.Overview</p>
+        </div>
+        <div class="col-2">
+            <label class="text-center">Movie Homepage</label>
+            <h3 class="text-center">@movieResult.Homepage</h3>
+        </div>
+    </div>
+    <div class="col-4">
+        <h3 class="text-center">@movieResult.OriginalLanguage</h3>
+        <label class="text-center">Spoken Languages</label>
+        @foreach (var language in movieResult.SpokenLanguages)
+        {
+            <h3 class="text-center">@language.EnglishName</h3>
+        }
+    </div>
+    <div class="col-4">
+        <label class="text-center">Vote Count</label>
+        <h3 class="text-center">@movieResult.VoteCount.ToString()</h3>
+        <label class="text-center">Vote Average</label>
+        <h3 class="text-center">@movieResult.VoteAverage.ToString("N1")</h3>
+        <label class="text-center">Popularity</label>
+        <h3 class="text-center">@movieResult.Popularity.ToString("N1")</h3>
+    </div>
+    <div class="col-4">
+        <label class="text-center">Movie Budget</label>
+        <h3 class="text-center">@movieResult.Budget.ToString("C")</h3>
+        <label class="text-center">Movie Revenue</label>
+        <h3 class="text-center">@movieResult.Revenue.ToString("C")</h3>
+    </div>
+    <div class="col-4">
+        <label class="text-center">Production Company</label>
+        @foreach (var company in @movieResult.ProductionCompanies)
+        {
+            <label class="text-center">Company Name</label>
+            <h3 class="text-center">@company.Name</h3>
+        }
+        <label class="text-center">Countries where film was made</label>
+        @foreach (var company in movieResult.ProductionCountries)
+        {
+            <label class="text-center">Name of Country</label>
+            <h3 class="text-center">@company.Name</h3>
+        }
+    </div>
 </div>
+</main>
+<footer>
+    <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+</footer>
 </body>
 </html>

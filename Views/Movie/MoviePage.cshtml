@@ -16,14 +16,15 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body  style="background-image: url('https://image.tmdb.org/t/p/original/@movieResult.BackdropPath')">
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-4">
                 <label class="text-center">Release Date</label>
-                <H3 class="text-center">@movieResult.</h3>
+                <H3 class="text-center">@movieResult.ReleaseDate</h3>
             </div>
             <div class="col-4">
                 <label class="text-center">Movie Title</label>
@@ -35,7 +36,7 @@
                 <label class="text-center">Film Status</label>
                 <h3 class="text-center">@movieResult.Status</h3>
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <label class="text-center">Adult Content</label>
                 <h3 class="text-center">@movieResult.Adult.ToString()</h3>
                 <label class="text-center">Movie Genres</label>
@@ -98,6 +99,7 @@
 </div>
 </main>
 <footer>
+    <script rel="script" type="text/javascript" src="/js/site.js"></script>
     <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
     <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>

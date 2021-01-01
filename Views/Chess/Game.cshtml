@@ -1,18 +1,179 @@
-﻿@model TModel
-
+﻿@model pdrake.Models.ChessProject.Game;
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-    <title>title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chess App</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
-<div>
-      
-</div>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="Index">Home Page</a>
+            </div>
+            <div class="col-7">
+                <h1>Chess App</h1>
+            </div>
+            <div class="dropdown col-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projectss</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies">Movie Streaming Availability App</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered col-8">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col">C</th>
+                    <th scope="col">D</th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">G</th>
+                    <th scope="col">H</th>
+                    <th scope="col">#</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@Model.board[0,0]</td>
+                    <td>@Model.board[0,1]</td>
+                    <td>@Model.board[0,2]</td>
+                    <td>@Model.board[0,3]</td>
+                    <td>@Model.board[0,4]</td>
+                    <td>@Model.board[0,5]</td>
+                    <td>@Model.board[0,6]</td>
+                    <td>@Model.board[0,7]</td>
+                    <th scope="row">1</th>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>@Model.board[1,0].ToString()</td>
+                    <td>@Model.board[1,1].ToString()</td>
+                    <td>@Model.board[1,2].ToString()</td>
+                    <td>@Model.board[1,3].ToString()</td>
+                    <td>@Model.board[1,4].ToString()</td>
+                    <td>@Model.board[1,5].ToString()</td>
+                    <td>@Model.board[1,6].ToString()</td>
+                    <td>@Model.board[1,7].ToString()</td>
+                    <th scope="row">2</th>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>@Model.board[2,0].ToString()</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">3</th>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">4</th>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">5</th>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">6</th>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">7</th>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <th scope="row">8</th>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col">C</th>
+                    <th scope="col">D</th>
+                    <th scope="col">E</th>
+                    <th scope="col">F</th>
+                    <th scope="col">G</th>
+                    <th scope="col">H</th>
+                    <th scope="col">#</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</main>
+<footer>
+    <script rel="script" type="text/javascript" src="js/site.js"></script>
+    <script rel="script" type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+    <script rel="script" type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script rel="script" type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+</footer>
 </body>
 </html>

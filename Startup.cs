@@ -55,6 +55,9 @@ namespace pdrake
                 endpoints.MapControllerRoute(
                     name: "movies",
                     pattern: "{controller=Movie}/{action=GetMovies}/{genreId?}/{page}");
+                endpoints.MapControllerRoute(
+                    name: "game",
+                    pattern: "{controller=Chess}/{action=Game}");
             });
         }
     }

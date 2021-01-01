@@ -22,13 +22,13 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-md-2">
                 <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="Index">Home Page</a>
             </div>
-            <div class="col-4">
-                <h1>Movie Streaming Availability App</h1>
+            <div class="col-md-4">
+                <h3>Movie Streaming Availability App</h3>
             </div>
-            <div class="dropdown col-3">
+            <div class="dropdown col-md-3">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">Sort by Genres</button>
                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButton">
                     <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies" asp-route-genreId="28">Action</a>
@@ -51,12 +51,12 @@
                     <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies" asp-route-genreId="10752">War</a>
                     <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies" asp-route-genreId="37">Western</a>
                 </div>
-                <div class="dropdown col-3">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" asp-controller="Chess" asp-action="Game">Chess App</a>
-                  </div>
-                </div>
+            </div>
+            <div class="dropdown col-md-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">Food Recipe App</a>
+              </div>
             </div>
         </div>
     </div>
@@ -76,16 +76,29 @@
     </div>
 </main>
 <footer>
-    <nav id="movieNav" aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
-    <script rel="script" type="text/javascript" src="js/site.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>@movieResults.TotalPages.ToString("N")</h3>
+            </div>
+            <div class="col-md-4">
+                <nav id="movieNav" aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page++.ToString())">Previous</a></li>
+                        @* @for (int i = movieResults.Page; i <= 10; i++) *@
+                        @* { *@
+                        @*     <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page(i).ToString())">i</a></li> *@
+                        @* } *@
+                        <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page++.ToString())">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-4">
+                <h3>@movieResults.TotalResults.ToString("N")</h3>
+            </div>
+        </div>
+    </div>
+    <script rel="script" type="text/javascript" src="/js/site.js"></script>
     <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
     <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>

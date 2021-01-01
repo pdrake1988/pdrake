@@ -23,26 +23,26 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <label class="text-center">Release Date</label>
-                <H3 class="text-center">@movieResult.ReleaseDate</h3>
+                <label class="text-center"><b>Release Date</b></label>
+                <H3 class="text-center"><b>@movieResult.ReleaseDate</b></h3>
             </div>
             <div class="col-4">
-                <label class="text-center">Movie Title</label>
-                <h1 class="text-center">@movieResult.Title</h1>
-                <label class="text-center">Movie Length</label>
-                <h1 class="text-center">@movieResult.Runtime.ToString("N")</h1>
-                <label class="text-center">Tagline</label>
-                <h3 class="text-center">@movieResult.Tagline</h3>
-                <label class="text-center">Film Status</label>
-                <h3 class="text-center">@movieResult.Status</h3>
+                <label class="text-center"><b>Movie Title</b></label>
+                <h1 class="text-center"><b>@movieResult.Title</b></h1>
+                <label class="text-center"><b>Movie Length</b></label>
+                <h1 class="text-center"><b>@movieResult.Runtime.ToString("N")</b></h1>
+                <label class="text-center"><b>Tagline</b></label>
+                <h3 class="text-center"><b>@movieResult.Tagline</b></h3>
+                <label class="text-center"><b>Film Status</b></label>
+                <h3 class="text-center"><b>@movieResult.Status</b></h3>
             </div>
             <div class="col-4">
-                <label class="text-center">Adult Content</label>
-                <h3 class="text-center">@movieResult.Adult.ToString()</h3>
-                <label class="text-center">Movie Genres</label>
+                <label class="text-center"><b>Adult Content</b></label>
+                <h3 class="text-center"><b>@movieResult.Adult.ToString()</b></h3>
+                <label class="text-center"><b>Movie Genres</b></label>
                 @foreach (var genre in movieResult.Genres)
                 {
-                    <h3 class="text-center">@genre.Name</h3>
+                    <h3 class="text-center"><b>@genre.Name</b></h3>
                 }
             </div>
         </div>
@@ -52,49 +52,49 @@
 <div class="container">
     <div class="row">
         <div class="col-6"j>
-            <label class="text-center">Overview</label>
-            <p>@movieResult.Overview</p>
+            <label class="text-center"><b>Overview</b></label>
+            <p><b>@movieResult.Overview</b></p>
         </div>
         <div class="col-2">
-            <label class="text-center">Movie Homepage</label>
-            <h3 class="text-center">@movieResult.Homepage</h3>
+            <label class="text-center"><b>Movie Homepage</b></label>
+            <h3 class="text-center"><b>@movieResult.Homepage</b></h3>
         </div>
-    </div>
-    <div class="col-4">
-        <h3 class="text-center">@movieResult.OriginalLanguage</h3>
-        <label class="text-center">Spoken Languages</label>
-        @foreach (var language in movieResult.SpokenLanguages)
-        {
-            <h3 class="text-center">@language.EnglishName</h3>
-        }
-    </div>
-    <div class="col-4">
-        <label class="text-center">Vote Count</label>
-        <h3 class="text-center">@movieResult.VoteCount.ToString()</h3>
-        <label class="text-center">Vote Average</label>
-        <h3 class="text-center">@movieResult.VoteAverage.ToString("N1")</h3>
-        <label class="text-center">Popularity</label>
-        <h3 class="text-center">@movieResult.Popularity.ToString("N1")</h3>
-    </div>
-    <div class="col-4">
-        <label class="text-center">Movie Budget</label>
-        <h3 class="text-center">@movieResult.Budget.ToString("C")</h3>
-        <label class="text-center">Movie Revenue</label>
-        <h3 class="text-center">@movieResult.Revenue.ToString("C")</h3>
-    </div>
-    <div class="col-4">
-        <label class="text-center">Production Company</label>
-        @foreach (var company in @movieResult.ProductionCompanies)
-        {
-            <label class="text-center">Company Name</label>
-            <h3 class="text-center">@company.Name</h3>
-        }
-        <label class="text-center">Countries where film was made</label>
-        @foreach (var company in movieResult.ProductionCountries)
-        {
-            <label class="text-center">Name of Country</label>
-            <h3 class="text-center">@company.Name</h3>
-        }
+        <div class="col-4">
+            <h3 class="text-center"><b>@movieResult.OriginalLanguage</b></h3>
+            <label class="text-center"><b>Spoken Languages</b></label>
+            @foreach (var language in movieResult.SpokenLanguages)
+            {
+                <h3 class="text-center"><b>@language.EnglishName</b></h3>
+            }
+        </div>
+        <div class="col-4">
+            <label class="text-center"><b>Vote Count</b></label>
+            <h3 class="text-center"><b>@movieResult.VoteCount.ToString()</b></h3>
+            <label class="text-center"><b>Vote Average</b></label>
+            <h3 class="text-center"><b>@movieResult.VoteAverage.ToString("N1")</b></h3>
+            <label class="text-center"><b>Popularity</b></label>
+            <h3 class="text-center"><b>@movieResult.Popularity.ToString("N1")</b></h3>
+        </div>
+        <div class="col-4">
+            <label class="text-center"><b>Movie Budget</b></label>
+            <h3 class="text-center"><b>@movieResult.Budget.ToString("C")</b></h3>
+            <label class="text-center"><b>Movie Revenue</b></label>
+            <h3 class="text-center"><b>@movieResult.Revenue.ToString("C")</b></h3>
+        </div>
+        <div class="col-4">
+            <label class="text-center"><b>Production Company</b></label>
+            @foreach (var company in @movieResult.ProductionCompanies)
+            {
+                <label class="text-center"><b>Company Name</b></label>
+                <h3 class="text-center"><b>@company.Name</b></h3>
+            }
+            <label class="text-center">Countries where film was made</label>
+            @foreach (var company in movieResult.ProductionCountries)
+            {
+                <label class="text-center"><b>Name of Country</b></label>
+                <h3 class="text-center"><b>@company.Name</b></h3>
+            }
+        </div>
     </div>
 </div>
 </main>

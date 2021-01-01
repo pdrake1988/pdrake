@@ -8,4 +8,8 @@
       <Folder Include="wwwroot\files" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Chess\Game.cshtml" />
+    </ItemGroup>
+
 </Project>

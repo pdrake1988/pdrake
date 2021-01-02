@@ -16,6 +16,9 @@ namespace pdrake.Models.FoodProject
         public string LocalizedName { get; set; } 
 
         [JsonPropertyName("image")]
-        public string Image { get; set; } 
+        public string Image { get; set; }
+        
+        [JsonPropertyName("temperature")]
+        public Temperature Temperature { get; set; } 
     }
 }

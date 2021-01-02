@@ -9,5 +9,12 @@ namespace pdrake.Models.FoodProject
     {
         [JsonPropertyName("recipes")]
         public List<Recipe> Recipes { get; set; }
+        
+        [JsonPropertyName("name")]
+        public string Name { get; set; } 
+
+        [JsonPropertyName("steps")]
+        public List<Step> Steps { get; set; } 
+        
     }
 }

@@ -17,5 +17,16 @@ namespace pdrake.Controllers
             ViewData["randomRecipes"] = await JsonSerializer.DeserializeAsync<Root>(apiResponse);
             return View();
         }
+
+        public async Task<ActionResult> Recipe(int recipeId)
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var apiResponse =
+                    await httpClient.GetStreamAsync("https://api.spoonacular.com/recipes/"+ recipeId +"/analyzedInstructions");
+                ViewData["recipeInfo"] = await JsonSerializer.DeserializeAsync<Root>(apiResponse);
+                return View();
+            }
+        }
     }
 }

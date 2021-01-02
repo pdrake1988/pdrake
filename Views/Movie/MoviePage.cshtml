@@ -20,7 +20,7 @@
 </head>
 <body  style="background-image: url('https://image.tmdb.org/t/p/original/@movieResult.BackdropPath')">
 <header>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-4">
                 <label class="text-center"><b>Release Date</b></label>
@@ -49,15 +49,14 @@
     </div>
 </header>
 <main>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-6"j>
+        <div class="col-6">
             <label class="text-center"><b>Overview</b></label>
             <p><b>@movieResult.Overview</b></p>
         </div>
-        <div class="col-2">
-            <label class="text-center"><b>Movie Homepage</b></label>
-            <h3 class="text-center"><b>@movieResult.Homepage</b></h3>
+        <div class="col-md-2">
+            <a class="page-link text-center" href="@movieResult.Homepage"><b>Movie Homepage</b></a> 
         </div>
         <div class="col-4">
             <h3 class="text-center"><b>@movieResult.OriginalLanguage</b></h3>
@@ -83,7 +82,7 @@
         </div>
         <div class="col-4">
             <label class="text-center"><b>Production Company</b></label>
-            @foreach (var company in @movieResult.ProductionCompanies)
+            @foreach (var company in movieResult.ProductionCompanies)
             {
                 <label class="text-center"><b>Company Name</b></label>
                 <h3 class="text-center"><b>@company.Name</b></h3>

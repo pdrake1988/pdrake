@@ -1,0 +1,54 @@
+﻿@using pdrake.Models.FoodProject
+@{
+    Layout = null;
+    Root randomRecipes = ViewData["randomRecipes"] as Root;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <title>Food Recipe App</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <a class="col1 btn btn-primary" role="button" asp-controller="Home" asp-action="Index">Home Page</a>
+            </div>
+            <div class="col-4">
+                <h3>Food Recipe App</h3>
+            </div>
+            
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            @foreach (var recipe in randomRecipes.Recipes)
+            {
+                <div class="col-3">
+                    <a asp-controller="Food" asp-action="GetRecipes"><img src="https://spoonacular.com/recipeImages/@recipe.Id-312x231.jpg" alt="@recipe.Title"></a>
+                    <br/>
+                    <label>@recipe.Title</label>
+                </div>
+            }
+        </div>
+    </div>
+</main>
+<footer>
+    <script rel="script" type="text/javascript" src="/js/site.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+</footer>
+</body>
+</html>

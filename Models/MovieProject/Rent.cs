@@ -1,7 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace pdrake.Models.MovieProject
 {
+    [Produces("application/json")]
     public class Rent
     {
         [JsonPropertyName("display_priority")]

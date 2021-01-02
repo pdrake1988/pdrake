@@ -6,7 +6,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Paul Drake's Website</title>
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
@@ -24,7 +23,7 @@
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies">Movie Streaming Availability App</a>
-                  <a class="dropdown-item">Food Recipe App</a>
+                  <a class="dropdown-item" asp-controller="Food" asp-action="GetRecipes">Food Recipe App</a>
               </div>
             </div>
         </div>

@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mime;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace pdrake.Models.MovieProject
 {
+    [Produces("application/json")]
     public class Root
     {
         [JsonPropertyName("id")]

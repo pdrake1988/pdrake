@@ -1,7 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace pdrake.Models.MovieProject
 {
+    [Produces("applicaiton/json")]
     public class Flatrate
     {
         [JsonPropertyName("display_priority")]

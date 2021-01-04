@@ -18,15 +18,18 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body  style="background-image: url('https://image.tmdb.org/t/p/original/@movieResult.BackdropPath')">
+<body style="background-color: royalblue">
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
+                <img class="img-fluid" src="https://image.tmdb.org/t/p/w780/@movieResult.BackdropPath">
+            </div>
+            <div class="col-3">
                 <label class="text-center"><b>Release Date</b></label>
                 <H3 class="text-center"><b>@movieResult.ReleaseDate</b></h3>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <label class="text-center"><b>Movie Title</b></label>
                 <h1 class="text-center"><b>@movieResult.Title</b></h1>
                 <label class="text-center"><b>Movie Length</b></label>
@@ -36,7 +39,7 @@
                 <label class="text-center"><b>Film Status</b></label>
                 <h3 class="text-center"><b>@movieResult.Status</b></h3>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <label class="text-center"><b>Adult Content</b></label>
                 <h3 class="text-center"><b>@movieResult.Adult.ToString()</b></h3>
                 <label class="text-center"><b>Movie Genres</b></label>

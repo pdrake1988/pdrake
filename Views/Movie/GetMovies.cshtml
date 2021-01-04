@@ -10,7 +10,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Streaming Availability App</title>
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
@@ -18,17 +17,20 @@
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body>
+<body style="background-color: black">
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-md-2 col-sm-4">
                 <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="Index">Home Page</a>
             </div>
-            <div class="col-4">
-                <h3>Movie Streaming Availability App</h3>
-            </div>
-            <div class="dropdown col-3">
+                <div class="col-sm-8 d-none d-sm-block d-md-none">
+                    <h6 class="text-center">Movie Streaming Availability App</h6>
+                </div>
+                <div class="col-md-7 d-sm-none d-md-block">
+                    <h1 class="text-center">Movie Streaming Availability App</h1>
+                </div>
+            <div class="dropdown col-md-3 col-sm-6">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="False">Sort by Genres</button>
                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButton">
                     <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies" asp-route-genreId="28">Action</a>
@@ -52,7 +54,7 @@
                     <a class="dropdown-item" asp-controller="Movie" asp-action="GetMovies" asp-route-genreId="37">Western</a>
                 </div>
             </div>
-            <div class="dropdown col-3">
+            <div class="dropdown float-right col-md-3 col-sm-6">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item">Food Recipe App</a>
@@ -67,9 +69,9 @@
             @foreach (var movie in movieResults.Results)
             {
                 <div class="col-3">
-                    <a asp-controller="Movie" asp-action="MoviePage" asp-route-movieId="@movie.Id.ToString()"><img src="https://image.tmdb.org/t/p/w185/@movie.PosterPath" alt="@movie.Title"></a>
+                    <a asp-controller="Movie" asp-action="MoviePage" asp-route-movieId="@movie.Id.ToString()"><img class="img-fluid" src="https://image.tmdb.org/t/p/w185/@movie.PosterPath" alt="@movie.Title"></a>
                     <br/>
-                    <label>@movie.Title</label>
+                    <label style="color: #1b6ec2">@movie.Title</label>
                 </div>
             }
         </div>
@@ -85,10 +87,7 @@
                 <nav id="movieNav" aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page++.ToString())">Previous</a></li>
-                        @* @for (int i = movieResults.Page; i <= 10; i++) *@
-                        @* { *@
-                        @*     <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page(i).ToString())">i</a></li> *@
-                        @* } *@
+                        
                         <li class="page-item"><a class="page-link" asp-controller="Movie" asp-action="GetMovies" asp-route-page="@(movieResults.Page++.ToString())">Next</a></li>
                     </ul>
                 </nav>

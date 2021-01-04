@@ -10,6 +10,10 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\Chess\Game.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Food\GetRecipes.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Food\Recipe.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cocktail\CocktailRecipe.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Cocktail\GetCocktails.cshtml" />
     </ItemGroup>
 
 </Project>

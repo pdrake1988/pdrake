@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="81e449e7-5c1c-4b76-9cea-2fc249421a40" name="pdrake.me" url="http://pdrake.me">
+        <fileTransfer rootFolder="/httpdocs" host="pdrake.me" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="9a092532-7100-4f89-b170-8340f0577d19" name="winnhost" url="https://w32.winhost.com:8172/MsDeploy.axd">
+        <fileTransfer rootFolder="/pdrakene" host="pdrake.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

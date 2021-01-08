@@ -1,7 +1,7 @@
 ﻿@using pdrake.Models.MovieProject
 @using System.Collections
 @{
-    Layout = null;
+    Layout = "_Layout";
     MovieResults movieResults = ViewData["movies"] as MovieResults; 
 }
 
@@ -9,13 +9,7 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Streaming Availability App</title>
-    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body style="background-color: black">
 <header>
@@ -97,10 +91,6 @@
             </div>
         </div>
     </div>
-    <script rel="script" type="text/javascript" src="/js/site.js"></script>
-    <script rel="script" type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
-    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script rel="script" type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
 </footer>
 </body>
 </html>
